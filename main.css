@@ -1,0 +1,109 @@
+.container {
+	margin-top: 150px;
+	text-align: center;
+}
+
+.hamburger {
+	display: inline-block;
+	position: relative;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.stick {
+	position: absolute;
+	display: block;
+	width: 90px;
+	height: 5px;
+	margin: 0 auto;
+	background-color: black;
+}
+
+/*#top { top: 0; }
+#middle { top: 10px; }
+#bottom { top: 20px; }
+*/
+
+.x .stick {
+	background-color: red;
+}
+
+.hamburger #top {
+	top: 0;
+	animation: resetRight 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.hamburger #bottom {
+	top: 20px;
+	animation: resetLeft 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.hamburger #middle {
+	top: 10px;
+	opacity: 100%;
+}
+
+.x #top {
+	animation: rightX 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.x #bottom {
+	animation: leftX 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.x #middle {
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+@keyframes leftX {
+	100% {
+		top: 5px;
+		transform: rotate(-45deg);
+	}
+}
+
+@keyframes rightX {
+	100% {
+		top: 5px;
+		transform: rotate(45deg);
+	}
+}
+
+
+@keyframes resetLeft {
+	0% {
+		top: 5px;
+		transform: rotate(45deg);
+	}
+	100% {
+		transform: rotate(0deg);
+		top: 20px;
+	}
+}
+
+@keyframes resetRight {
+	0% {
+		top: 5px;
+		transform: rotate(-45deg);
+	}
+	100% {
+		transform: rotate(0deg);
+		top: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
