@@ -6,6 +6,8 @@
 .hamburger {
 	display: inline-block;
 	position: relative;
+	height: 26px;
+	width: 40px;
 	margin: 0 auto;
 	cursor: pointer;
 }
@@ -37,16 +39,17 @@
 
 .hamburger #middle {
 	top: 10px;
-	opacity: 100%;
+	opacity: 1;
+	transition: opacity 0.7s;
 }
 
 .x #top {
-	animation: rightX 0.5s;
+	animation: leftX 0.5s;
 	animation-fill-mode: forwards;
 }
 
 .x #bottom {
-	animation: leftX 0.5s;
+	animation: rightX 0.5s;
 	animation-fill-mode: forwards;
 }
 
@@ -91,14 +94,5 @@
 		top: 0;
 	}
 }
-
-
-
-
-
-
-
-
-
 
 
