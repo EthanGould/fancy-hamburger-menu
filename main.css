@@ -1,28 +1,28 @@
 .container {
 	margin-top: 150px;
-	text-align: center;
 }
 
 .hamburger {
-	display: inline-block;
 	position: relative;
 	height: 26px;
 	width: 40px;
-	margin: 0 auto;
+	padding-left: 5px;
+	margin-bottom: 5px;
 	cursor: pointer;
 }
 
-.stick {
+.hamburger__bar {
 	position: absolute;
 	display: block;
 	width: 40px;
 	height: 5px;
 	margin: 0 auto;
 	background-color: black;
+	transition: color 0.3s;
 }
 
-.x .stick {
-	background-color: red;
+.open .hamburger__bar {
+	background-color: #f44242;
 }
 
 .hamburger #top {
@@ -31,31 +31,74 @@
 	animation-fill-mode: forwards;
 }
 
+.hamburger #middle {
+	top: 10px;
+	opacity: 1;
+	transition: opacity 0.7s;
+}
 .hamburger #bottom {
 	top: 20px;
 	animation: resetLeft 0.5s;
 	animation-fill-mode: forwards;
 }
 
-.hamburger #middle {
-	top: 10px;
-	opacity: 1;
-	transition: opacity 0.7s;
-}
-
-.x #top {
+.open #top {
 	animation: leftX 0.5s;
 	animation-fill-mode: forwards;
 }
 
-.x #bottom {
+.open #middle {
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+.open #bottom {
 	animation: rightX 0.5s;
 	animation-fill-mode: forwards;
 }
 
-.x #middle {
-	opacity: 0;
-	transition: opacity 0.2s;
+.hamburger-menu__items {
+	transition: all 2s;
+	display: none;
+}
+
+.open .hamburger-menu__items {
+	display: block;
+}
+
+.hamburger-menu.open {
+	background-color: gray;
+	display: inline-block;
+	width: auto;
+	transition: background-color 1s;
+}
+
+.hamburger-menu {
+	padding: 20px 0 0;
+	width: 40px;
+}
+
+
+/**
+ * Menu Items
+ */
+
+.hamburger-menu__items {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hamburger-menu__item {
+	padding: 10px 30px;
+	cursor: pointer;
+	color: white;
+	font-family: sans-serif;
+	font-size: 22px;
+	transition: background-color 0.2s;
+}
+
+.hamburger-menu__item:hover {
+	background-color: darkgray;
 }
 
 @keyframes leftX {
